@@ -17,7 +17,9 @@ $text-blue:#1C4062;
 // $text-blue-alt:#214E77;
 $bullet-orange: #ff7d50;
 
+$border-grey: #DADCE0;
 
+$color-new: black;
 
 
 .img-container{
@@ -54,38 +56,23 @@ $bullet-orange: #ff7d50;
 
 
 .main-point{
-  // text-align: center;
-  // width:80%;
-  // align-self: center;
-  // box-shadow:0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
-  // font-family:'Roboto Slab', sans-serif;
-  // padding:40px;
-  // font-weight:300;
-  // color:#333;
-  // border-radius:3px;
-  // border-left:6px solid;
-  // border-color: $color-6;
-  // font-size:0.8em;
+
 
   background: #FBFBFB;
-  border: 1px solid #000000;
+  border: 1px solid $border-grey;
   box-sizing: border-box;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);
-  border-radius: 15px;
+  // border-radius: 15px;
   font-size:0.9em;
   padding:25px;
   width:700px;
+  font-weight:400;
 
-
-  // background-color:#F6F9F9;
-  // background-color:#FA8072;
-  // background-color:#0E8BFF;
-  // background: linear-gradient(90deg, #1B9CE5 0%, #10E7DC 100%);
-  // border-color:$color-2;
 }
 
 .main-point.small{
-  font-size:0.65em;
+  font-size:0.85em;
+  padding:30px;
   
 }
  
@@ -120,45 +107,31 @@ $bullet-orange: #ff7d50;
 }
 
 .importance-box.thm,
+.importance-box.property,
 .importance-box.def{
   flex-direction:row;
   display:flex;
   background-color: #FBFBFB;
-  border: 1px solid #000000;
+  border: 1px solid #DADCE0;
   box-sizing: border-box;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);
   margin-bottom:20px;
-  padding:10px 0px;
-  border-radius:10px;
+  padding:5px 0px;
+  // border-radius:5px;
 }
 
-.importance-box .bullet{
-  height:calc(100% - 50px);
-  width:10px;
-  position:absolute;
-  background-color:$color-5;
-  border-radius:5px;
-  // position:relative;
-  top:15px;
-  // border: 1px solid #000000;
-  // box-sizing: border-box;
-  margin:10px 0px 0px 25px;
-}
 
-.importance-box.thm .bullet{
-  background-color:$color-8;
-}
 
 
 .importance-box .content{
   display:flex;
   flex-direction:column;
-  margin-left:40px;
+  margin-left:10px;
 }
 
 
 .importance-box .header{
-  margin:5px 10px 0px 10px;
+  margin:15px 10px 0px 10px;
   padding:0px;
   display:flex;
   flex-direction:row;
@@ -169,17 +142,28 @@ $bullet-orange: #ff7d50;
   font-family: Lato;
   font-style: normal;
   font-weight: bold;
-  font-size: 25px;
-  line-height: 42px;
+  font-size: 22px;
+  letter-spacing: 1px;
   display: flex;
   align-items: center;
-  color:#333333;
+  color:white;
+  margin-left:0px;
+  margin-bottom:10px;
+  background-color: $color-5;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);
+
+  // border-radius:5px;
+  padding:2px 20px;
 }
 
-.importance-box .header .label:after{
-  content:":";
-  margin-left:2px;
+.importance-box.property .header .label{
+  background-color:$color-8;
 }
+
+// .importance-box .header .label:after{
+//   // content:":";
+//   margin-left:2px;
+// }
 
 
 
@@ -191,10 +175,11 @@ $bullet-orange: #ff7d50;
   font-family: 'Lato',sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 30px;
-  margin:0px 30px 15px 20px;
+  margin:12px 30px 18px 15px;
   font-weight:500;
+  padding:5px 0px 5px 20px;
 }
 
 
@@ -228,25 +213,48 @@ $bullet-orange: #ff7d50;
 }
 
 .statement{
-  font-size:0.8em;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  font-size:1.0em;
   font-weight:500;
-  color:$text-blue;
-  align-self:center;
-  font-family:"Roboto Slab",sans-serif;
-  margin-top:50px;
+  color:#333;
+  margin-top:10px;
+  width:100%;
+  height:100%;
+  padding:25px 20px;
+  .bullet{
+    color:#7353BA;  
+  }
+  .text-area{
+    margin-left:20px;
+  }
+}
+
+
+.sub-statement{
+  @extend .statement;
+  margin-left:60px;
+  width:80%;
+  font-size:0.9em;
+  .bullet{
+    color:$color-4;
+  }
 }
 
 .card{
-  box-shadow:0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
-  padding:20px;
+  padding:25px;
   margin:20px;
   display:flex;
-  border-radius:4px;
   flex:1;
-  font-size:0.6em;
-  font-family:'Roboto Slab',sans-serif;
-  color:$text-blue;
-  background-color:white;
+  font-size:0.7em;
+  // background: #FBFBFB;
+  border: 1px solid $border-grey;
+  box-sizing: border-box;
+  box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.25);
+  font-weight:400;
+
+
 }
 
 .card.center{
